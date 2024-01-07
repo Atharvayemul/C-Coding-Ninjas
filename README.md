@@ -1,1 +1,1 @@
-# C-Coding-Ninjas
+# C++-Coding-Ninjas
