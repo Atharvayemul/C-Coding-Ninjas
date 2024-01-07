@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    int sum_of_divisors = 0;
+    int divisor = 1;
+
+    do {
+        if (n % divisor == 0) {
+            sum_of_divisors += divisor;
+        }
+        divisor++;
+    } while (divisor <= n / 2);
+
+    if (sum_of_divisors == n) {
+        cout << n << " is a perfect number" << endl;
+    } else {
+        cout << n << " is not a perfect number" << endl;
+    }
+
+    return 0;
+}
