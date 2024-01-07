@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+
+    while (true) {
+        cin >> num;
+
+        if (num == 50) {
+            cout << num << endl;
+            break;  // Exit the loop when 50 is entered
+        }
+
+        if (num == 15) {
+            continue;  // Skip printing 15 and continue with the next iteration
+        }
+
+        cout << num << " ";
+    }
+
+    return 0;
+}
