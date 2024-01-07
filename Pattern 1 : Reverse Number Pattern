@@ -1,27 +1,19 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
+int main() {
+    int N;
+    cin >> N;
 
-int main(){
+    // Loop through rows from 1 to N
+    for (int i = 1; i <= N; i++) {
+        // Print numbers in reverse order from i to 1, separated by ''
+        for (int j = i; j >= 1; j--) {
+            cout << j;
+        }
+        // Move to the next line after each row
+        cout << endl;
+    }
 
-       /*  Read input as specified in the question.
-	* Print output as specified in the question.
-	*/
-	int n;
-	cin>>n;
-	int i = 1;
-	while(i <= n)
-	{
-		int j =1 ;
-		while( j <= i)
-		{
-			cout<<"*";
-			j++;
-		}
-		cout<<endl;
-		i++;
-	}
-  
+    return 0;
 }
-
-
