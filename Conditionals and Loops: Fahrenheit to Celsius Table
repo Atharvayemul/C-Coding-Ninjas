@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+
+
+int main()
+{
+
+	int start,end,step;
+	cin>>start>>end>>step;
+	while(start <=end)
+	{
+		cout<<start<<" "<<((start -32) * 5/9)<<endl;
+		start +=step;
+	}
+  
+}
+
+
