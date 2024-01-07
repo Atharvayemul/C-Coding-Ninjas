@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    char currentChar = 'A' + N - 1;
+
+    // Loop through rows from 1 to N
+    for (int i = 1; i <= N; i++) {
+        // Print characters starting from the currentChar
+        for (char j = currentChar; j <= 'A' + N - 1; j++) {
+            cout << j;
+        }
+        // Move to the next line after each row
+        cout << endl;
+        // Decrement currentChar for the next row
+        currentChar--;
+    }
+
+    return 0;
+}
