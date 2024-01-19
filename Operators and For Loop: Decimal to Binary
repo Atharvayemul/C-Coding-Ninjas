@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+long long int decimalToBinary(int N) {
+    long long int binary = 0;
+    long long int base = 1;
+
+    while (N > 0) {
+        int remainder = N % 2;
+        binary += remainder * base;
+        base *= 10;
+        N /= 2;
+    }
+
+    return binary;
+}
+
+int main() {
+    int N;
+    cin >> N;
+
+    long long int binaryValue = decimalToBinary(N);
+    cout << binaryValue << endl;
+
+    return 0;
+}
