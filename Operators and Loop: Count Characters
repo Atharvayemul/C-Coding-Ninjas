@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    char ch;
+    int charCount = 0;
+    int digitCount = 0;
+    int spaceCount = 0;
+
+    while (true) {
+        cin.get(ch);
+
+        if (ch == '$') {
+            break; // Exit the loop when '$' is encountered
+        } else if (islower(ch)) {
+            charCount++;
+        } else if (isdigit(ch)) {
+            digitCount++;
+        } else if (ch == ' ' || ch == '\t' || ch == '\n') {
+            spaceCount++;
+        }
+    }
+
+    cout << charCount << " " << digitCount << " " << spaceCount << endl;
+
+    return 0;
+}
