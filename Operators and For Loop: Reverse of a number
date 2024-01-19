@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+	// Write your code here
+	int number;
+	cin>>number;
+	int n;
+	int reverse = 0;
+
+	while(number  != 0)
+	{
+		n = number % 10;
+		reverse = reverse * 10 + n ;
+		number = number / 10;
+	}
+
+	cout<<reverse;
+	
+}
