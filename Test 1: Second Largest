@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+#include <climits>
+
+
+int main(){
+    
+    // Write your code here
+     int n;
+    cin >> n;  // Input the number of elements
+
+    int firstLargest = INT_MIN;  // Initialize first largest to the smallest possible integer
+    int secondLargest = INT_MIN; // Initialize second largest to the smallest possible integer
+
+    for (int i = 0; i < n; i++) {
+        int element;
+        cin >> element;  // Input the elements one by one
+
+        if (element > firstLargest) {
+            // If the current element is larger than the first largest, update both first and second largest
+            secondLargest = firstLargest;
+            firstLargest = element;
+        } else if (element < firstLargest && element > secondLargest) {
+            // If the current element is not the first largest but is larger than the second largest, update the second largest
+            secondLargest = element;
+        }
+    }
+
+    // If there is only one element or no elements, the second largest would still be INT_MIN
+    if (secondLargest == INT_MIN)
+        secondLargest = INT_MIN;
+
+    cout << secondLargest << endl;  // Output the second largest element
+
+    return 0;
+    
+}
