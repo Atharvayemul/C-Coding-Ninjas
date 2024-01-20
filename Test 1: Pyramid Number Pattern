@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+
+  // Write your code here  
+   int N;
+    cin >> N;
+
+    for (int i = 1; i <= N; i++) {
+        // Print spaces
+        for (int j = 1; j <= N - i; j++) {
+            cout << " ";
+        }
+
+        // Print decreasing numbers
+        for (int j = i; j >= 1; j--) {
+            cout << j;
+        }
+
+        // Print increasing numbers (excluding 1)
+        for (int j = 2; j <= i; j++) {
+            cout << j;
+        }
+
+        cout << endl;
+    }
+
+    return 0;
+
+  
+}
+
