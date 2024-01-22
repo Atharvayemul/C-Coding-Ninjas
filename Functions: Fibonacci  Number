@@ -1,0 +1,39 @@
+bool checkMember(int n) {
+    if (n < 0) {
+        return false;  // Fibonacci numbers are non-negative
+    }
+    
+    // Initialize the first two Fibonacci numbers
+    int a = 0;
+    int b = 1;
+
+    // Keep generating Fibonacci numbers until they are less than or equal to n
+    while (a <= n) {
+        if (a == n) {
+            return true;  // The number is a Fibonacci number
+        }
+
+        // Calculate the next Fibonacci number
+        int next = a + b;
+        a = b;
+        b = next;
+    }
+
+    return false;  // The number is not a Fibonacci number
+}
+
+#include<iostream>
+using namespace std;
+#include "solution.h"
+
+int main(){
+
+  int n; 
+  cin >> n ;
+  if(checkMember(n)){
+    cout << "true" << endl;
+  }else{
+    cout << "false" << endl;
+  }
+
+}
