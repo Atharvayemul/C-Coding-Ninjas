@@ -1,0 +1,31 @@
+int fahrenheitToCelsius(int fahrenheit) {
+    return (int)((5.0 / 9.0) * (fahrenheit - 32));
+}
+void printTable(int start, int end, int step) {
+    /* Don't write main().
+     * Don't read input, it is passed as function argument.
+     * Print output and don't return it.
+     * Taking input is handled automatically.
+     */
+      for (int fahrenheit = start; fahrenheit <= end; fahrenheit += step) {
+        int celsius = fahrenheitToCelsius(fahrenheit);
+        cout << fahrenheit << "\t" << celsius << endl;
+    }
+    
+}
+
+
+
+#include<iostream>
+using namespace std;
+#include "Solution.h"
+
+int main(){
+    int start, end, step;
+    cin >> start >> end >> step;
+  
+    printTable(start, end, step);
+
+}
+
+
