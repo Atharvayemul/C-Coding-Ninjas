@@ -1,0 +1,39 @@
+int factorial(int num) {
+    if (num < 0) {
+        return -1; // Negative numbers don't have factorials
+    }
+    int result = 1;
+    for (int i = 2; i <= num; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+// Function to calculate the permutation (nPr)
+int permutation(int n, int r) {
+    if (n < 0 || r < 0 || r > n) {
+        return -1; // Invalid input, return -1
+    }
+    return factorial(n) / factorial(n - r);
+}
+
+
+#include <bits/stdc++.h>
+using namespace std;
+#include "solution.h"
+
+int main() {
+    int n, r;
+    cin >> n;
+    cin >> r;
+    
+    int result = permutation(n, r);
+    
+    if (result == -1) {
+        cout << "Please enter n >= r >= 0" <<endl;
+    } else {
+        cout << result << endl;
+    }
+    
+    return 0;
+}
