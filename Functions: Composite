@@ -1,0 +1,32 @@
+bool print_composite(int n)
+{
+    //Write your code here
+     if (n <= 1) {
+        return false; // 0 and 1 are not considered composite numbers
+    }
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+#include <bits/stdc++.h>
+using namespace std;
+#include "solution.h"
+
+int main()
+{
+    
+    int n;
+    cin>>n;
+    
+    for(int i=2; i <= n; i++){
+        if(print_composite(i))
+            cout<<i<<endl;
+    }
+ 
+    return 0;
+}
