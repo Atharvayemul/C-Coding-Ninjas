@@ -1,0 +1,75 @@
+bool checkArmstrong(int n){
+	//Write your code here
+	   if (n < 0) {
+        return false;  // Armstrong numbers are non-negative
+    }
+
+    int originalNumber = n;
+    int k = 0;
+    int sum = 0;
+
+    // Calculate the number of digits in 'n'
+    while (n > 0) {
+        n /= 10;
+        k++;
+    }
+
+    n = originalNumber;  // Reset 'n' to its original value
+
+    // Calculate the sum of digits raised to the 'k'th power
+    while (n > 0) {
+        int digit = n % 10;
+        sum += pow(digit, k);
+        n /= 10;
+    }
+
+    return sum == originalNumber;
+}
+
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <cmath>
+#include <algorithm>
+#include <utility>
+#include <iomanip>
+using namespace std;
+
+#include "solution.h"
+
+class Runner
+{
+    int n;
+
+public:
+    void takeInput()
+    {
+        cin >> n;
+    }
+
+    void execute()
+    {
+
+        bool ans = checkArmstrong(n);
+    }
+
+    void executeAndPrintOutput()
+    {
+
+        bool ans = checkArmstrong(n);
+        cout << (ans?"true":"false") << endl;
+    }
+};
+
+int main()
+{
+    // freopen("testcases/large/in/input11.txt", "r", stdin);
+    // freopen("testcases/large/out/output11.txt", "w", stdout);
+    Runner runner;
+    runner.takeInput();
+    runner.executeAndPrintOutput();
+
+    return 0;
+}
+
