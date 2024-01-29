@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+	// Write your code here
+	int arr[10000];
+	int n ;
+	cin>> n;
+
+for ( int j = 0 ; j< n ; j++)
+{
+	cin>> arr[j];
+}
+
+	int min = arr[0];
+
+	for(int i = 1;  i < n ; i++)
+	{
+		if( arr[i] < min )
+		{
+			min = arr[i];
+		}
+	}
+	cout<< min;
+}
