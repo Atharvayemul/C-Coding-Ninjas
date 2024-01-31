@@ -1,0 +1,85 @@
+void merge(int arr1[], int size1, int arr2[], int size2, int ans[])
+{
+    //Write your code here   
+    //You don't have to print or return anything, 
+    //just store the final answer in third array ans. 
+    
+    int I = 0 , J= 0 , Indx = 0;
+
+
+    while( I < size1  && J < size2 )
+    {
+        if ( arr1[I] < arr2[J])
+        {
+            ans[Indx] = arr1[I];
+            I++;
+            Indx++;
+        }
+        else{
+            ans[Indx] = arr2[J];
+            J++;
+            Indx++;
+        }
+    }
+
+    while( I < size1)
+    {
+        ans[Indx] = arr1[I];
+        I++;
+        Indx++;
+    }
+
+    while ( J < size2)
+    {
+        ans[Indx] = arr2[J];
+        J++;
+        Indx++;
+    }
+}
+
+#include <iostream>
+using namespace std;
+
+#include "solution.h"
+
+int main()
+{
+	int t;
+	cin >> t;
+	
+	while (t--)
+	{
+		int size1;
+		cin >> size1;
+
+		int arr1[size1];
+
+		for (int i = 0; i < size1; i++)
+		{
+			cin >> arr1[i];
+		}
+
+		int size2;
+		cin >> size2;
+
+		int arr2[size2];
+
+		for (int i = 0; i < size2; i++)
+		{
+			cin >> arr2[i];
+		}
+
+		int ans[size1+size2];
+
+		merge(arr1, size1, arr2, size2, ans);
+
+		for (int i = 0; i < size1 + size2; i++)
+		{
+			cout << ans[i] << " ";
+		}
+
+		cout << endl;
+
+	}
+}
+
