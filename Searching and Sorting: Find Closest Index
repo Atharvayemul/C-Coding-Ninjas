@@ -1,0 +1,65 @@
+int binarySearchClosest(int arr[], int left, int right, int target)
+{
+    //Write your code here
+    bool flag = false;
+    
+    while ( left <= right)
+    {
+        int mid = (left + right )  / 2;
+
+        if( target == arr[mid])
+        {
+            flag = true;
+            return mid;
+        }
+        else if ( target <  arr[mid])
+        {
+            right = mid - 1;
+        }
+        else{
+            left = mid + 1;
+        }
+    }
+
+    if ( flag == false)
+  {
+        left = 0;
+        right = right - 1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+        if( target - arr[mid] == 1)
+        {
+            return mid;
+        }
+        else if ( target <  arr[mid])
+        {
+            right = mid - 1;
+        }
+        else{
+            left = mid + 1;
+        }
+
+        }
+    }
+}
+
+#include<iostream>
+using namespace std;
+
+#include"solution.h"
+int main() {
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    int left = 0;
+    int right =n-1;
+    int target;
+    cin>>target;
+    int ans = binarySearchClosest(arr, 0, n-1, target);
+    cout<<ans;
+    return 0;
+}
