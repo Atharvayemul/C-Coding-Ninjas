@@ -1,0 +1,90 @@
+long long int floorSqrt(long long int N)
+{
+    if (N < 0) {
+        std::cout << "Input must be a non-negative integer" << std::endl;
+        return -1;  // Indicate an error
+    } else if (N == 0 || N == 1) {
+        return N;
+    }
+
+    // Initialize variables
+    long long int start = 0, end = N, result = 0;
+
+    // Binary search to find the square root
+    while (start <= end) {
+        unsigned long long int mid = (start + end) / 2;
+        unsigned long long int midSquared = mid * mid;
+
+        // Check if mid is the square root
+        if (midSquared == N) {
+            return mid;
+        } else if (midSquared < N) {
+            start = mid + 1;
+            result = mid;  // Update result for the floor value
+        } else {
+            end = mid - 1;
+        }
+    }
+
+    return result;  // Return the floor value
+}
+
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#include "solution.h"
+
+class Runner
+{
+    int t = 1;
+
+    vector<long long int> allN;
+
+public:
+    void takeInput()
+    {
+        // cin >> t;
+
+        allN.resize(t);
+
+        for (int i = 0; i < t; i++)
+        {
+            cin >> allN[i];
+        }
+
+        return;
+    }
+
+    void execute()
+    {
+        for (int i = 0; i < t; i++)
+        {
+            long long int copyN = allN[i];
+
+            // Get the answer from scaffold/solution
+            int result = floorSqrt(copyN);
+        }
+    }
+
+    void executeAndPrintOutput()
+    {
+        for (int i = 0; i < t; i++)
+        {
+            int result = floorSqrt(allN[i]);
+            cout << result ;
+            cout << "\n";
+        }
+    }
+};
+
+int main()
+{
+    Runner runner;
+    runner.takeInput();
+    runner.executeAndPrintOutput();
+
+    return 0;
+}
