@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+    int M, N;
+    cin >> M >> N;
+
+    int arr[1001][1001];
+
+    // Input the 2D array
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            cin >> arr[i][j];
+        }
+    }
+
+    // Calculate and print the sum of ith column elements
+    for (int j = 0; j < N; j++) {
+        int columnSum = 0;
+        for (int i = 0; i < M; i++) {
+            columnSum += arr[i][j];
+        }
+        cout << columnSum << " ";
+    }
+
+    return 0;
+}
