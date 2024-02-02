@@ -1,0 +1,36 @@
+void printSubstrings(char input[]) {
+    int count = 0;
+
+    // Calculate the length of the input string
+    int n = 0;
+    while (input[n] != '\0') {
+        n++;
+    }
+
+    // Nested loops to generate all substrings
+    for (int i = 0; i < n; i++) {
+        for (int len = 1; i + len <= n; len++) {
+            // Create a substring using array indices
+            for (int j = i; j < i + len; j++) {
+                cout << input[j];
+            }
+            cout << endl;
+            count++;
+        }
+    }
+
+    
+}
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+#include "solution.h"
+
+int main() {
+    int size = 1e6;
+    char str[size];
+    cin >> str;
+    printSubstrings(str);
+}
