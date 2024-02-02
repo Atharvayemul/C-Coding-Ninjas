@@ -1,0 +1,53 @@
+int findLargest(int input[][1001], int nRows, int mCols)
+{
+     int maxRowSum = 0;
+    int maxColSum = 0;
+
+    // Calculate the sum of each row and find the maximum row sum
+    for (int i = 0; i < nRows; i++) {
+        int rowSum = 0;
+        for (int j = 0; j < mCols; j++) {
+            rowSum += input[i][j];
+        }
+        maxRowSum = max(maxRowSum, rowSum);
+    }
+
+    // Calculate the sum of each column and find the maximum column sum
+    for (int j = 0; j < mCols; j++) {
+        int colSum = 0;
+        for (int i = 0; i < nRows; i++) {
+            colSum += input[i][j];
+        }
+        maxColSum = max(maxColSum, colSum);
+    }
+
+    // Return the maximum of the row and column sums
+    return max(maxRowSum, maxColSum);
+}
+
+#include <iostream>
+using namespace std;
+#include<climits>
+
+
+#include"solution.h"
+
+int main()
+{
+	
+		int row, col;
+		cin >> row >> col;
+		int input[row][1001];
+		for (int i = 0; i < row; i++)
+		{
+			
+			for (int j = 0; j < col; j++)
+			{
+				cin >> input[i][j];
+			}
+		}
+
+		
+		cout << findLargest(input, row, col)<<endl;
+	
+}
