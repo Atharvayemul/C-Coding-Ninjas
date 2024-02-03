@@ -1,0 +1,18 @@
+from sys import stdin
+
+
+def isPermutation(str1, str2) :
+	#Your code goes here
+    str1 = str1.strip()
+    str2 = str2.strip()
+
+    # Check if the lengths of the strings are different
+    if len(str1) != len(str2):
+        return False
+
+    # Use sorted strings to check for permutation
+    sorted_str1 = sorted(str1)
+    sorted_str2 = sorted(str2)
+
+    # Compare the sorted strings
+    return sorted_str1 == sorted_str2
