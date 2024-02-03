@@ -1,0 +1,36 @@
+void reverseEachWord(char input[]) {
+    int length = strlen(input);
+    int start = 0;
+
+    for (int end = 0; end <= length; ++end) {
+        // Check for space or end of string
+        if (input[end] == ' ' || input[end] == '\0') {
+            // Reverse the word from start to end-1
+            int i = start, j = end - 1;
+            while (i < j) {
+                char temp = input[i];
+                input[i] = input[j];
+                input[j] = temp;
+                i++;
+                j--;
+            }
+            // Move start to the next character
+            start = end + 1;
+        }
+    }
+}
+
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+#include "solution.h"
+
+int main() {
+    int size = 1e6;
+    char str[size];
+    cin.getline(str, size);
+    reverseEachWord(str);
+    cout << str;
+}
