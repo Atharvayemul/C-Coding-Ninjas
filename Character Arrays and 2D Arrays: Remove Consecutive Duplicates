@@ -1,0 +1,38 @@
+void removeConsecutiveDuplicates(char input[]) {
+    // Write your code here
+      int n = strlen(input);
+
+    if (n <= 1) {
+        // If the string has 0 or 1 character, no duplicates to remove
+        return;
+    }
+
+    int index = 0; // Index to track the current position in the modified string
+
+    for (int i = 1; i < n; i++) {
+        if (input[index] != input[i]) {
+            // If the current character is different from the previous one,
+            // append it to the modified string
+            index++;
+            input[index] = input[i];
+        }
+    }
+
+    // Null-terminate the modified string
+    input[index + 1] = '\0';
+}
+
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+#include "solution.h"
+
+int main() {
+    int size = 1e6;
+    char str[size];
+    cin >> str;
+    removeConsecutiveDuplicates(str);
+    cout << str;
+}
