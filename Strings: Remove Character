@@ -1,0 +1,28 @@
+void removeAllOccurrencesOfChar(string input, char c) {
+    // Iterate through the characters in the string
+    for (size_t i = 0; i < input.length(); ++i) {
+        // Check if the current character is equal to the specified character
+        if (input[i] == c) {
+            // Remove the occurrence of the character by shifting the remaining characters
+            input.erase(i, 1);
+            // Adjust the index to account for the removed character
+            --i;
+        }
+    }
+
+    // Print the modified string without occurrences of the specified character
+    cout << input << endl;
+}
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#include "solution.h"
+
+int main(){
+    string a;
+    cin>>a;
+    char c;
+    cin>>c;
+    removeAllOccurrencesOfChar(a,c);
+}
