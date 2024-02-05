@@ -1,0 +1,22 @@
+#include <bits/stdc++.h> 
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+void printSubstrings(string input) {
+    //Write your code here
+    int n  = input.size();
+
+    for (int l = 0; l < n; l++) {
+        for (int r = l; r < n; r++) {
+            cout << input.substr(l, r - l + 1) << endl;
+        }
+    }
+}
+
+int main() {
+    string input;
+    getline(cin, input);
+    printSubstrings(input);
+    return 0;
+}
