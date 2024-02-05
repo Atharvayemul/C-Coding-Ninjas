@@ -1,0 +1,27 @@
+string addBinaryString(string &a, string &b, int n, int m) {
+    // Ensure both strings are of equal length by padding with zeros
+    int maxLen = max(n, m);
+    a = string(maxLen - n, '0') + a;
+    b = string(maxLen - m, '0') + b;
+
+    int carry = 0;
+    string result(maxLen, '0');
+
+    // Iterate through the strings in reverse order
+    for (int i = maxLen - 1; i >= 0; --i) {
+        int bitA = a[i] - '0';
+        int bitB = b[i] - '0';
+
+        // Calculate the sum and update the carry
+        int sum = bitA + bitB + carry;
+        result[i] = (sum % 2) + '0';
+        carry = sum / 2;
+    }
+
+    // If there's a carry left, add it to the front of the result
+    if (carry > 0) {
+        result.insert(result.begin(), carry + '0');
+    }
+
+    return result;
+}
