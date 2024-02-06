@@ -1,0 +1,24 @@
+string getCompressedString(string &input) {
+    // Write your code here.
+    string compressedString = "";
+    
+    int count = 1;
+    for (size_t i = 1; i <= input.length(); ++i) {
+        if (i < input.length() && input[i] == input[i - 1]) {
+            // If the current character is the same as the previous one, increment the count
+            count++;
+        } else {
+            // If the current character is different or we have reached the end of the string
+            // Append the character and its count to the compressed string
+            compressedString += input[i - 1];
+            if (count > 1) {
+                compressedString += to_string(count);
+            }
+            
+            // Reset the count for the next character
+            count = 1;
+        }
+    }
+
+    return compressedString;
+}
