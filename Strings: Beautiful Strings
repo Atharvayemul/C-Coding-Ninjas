@@ -1,0 +1,116 @@
+int makeBeautiful(string str) {
+    
+	 int n = str.length();
+
+    int cnt1 = 0;
+
+    int cnt2 = 0;
+
+    string s1(n, '0'); // Initialize s1 with '0's having the same length as str
+
+    string s2(n, '1'); // Initialize s2 with '1's having the same length as str
+
+ 
+
+    for (int i = 1; i < n; i++) {
+
+        if (s1[i - 1] == '0')
+
+            s1[i] = '1';
+
+        else
+
+            s1[i] = '0';
+
+ 
+
+        if (s2[i - 1] == '0')
+
+            s2[i] = '1';
+
+        else
+
+            s2[i] = '0';
+
+    }
+
+ 
+
+    for (int i = 0; i < n; i++) {
+
+        if (str[i] != s1[i])
+
+            cnt1++;
+
+ 
+
+        if (str[i] != s2[i])
+
+            cnt2++;
+
+    }
+
+
+    return min(cnt1, cnt2);
+}
+
+
+
+#include <cstdlib>
+#include <string>
+#include <fstream>
+#include <iostream>
+#include <vector>
+#include<climits>
+
+using namespace std;
+#include "solution.h"
+
+
+class Runner
+{
+    int t;
+    vector<string> str;
+
+public:
+    void takeInput()
+    {
+        cin >> t;
+        for (int c = 0; c < t; c++)
+        {
+            string temp;
+            cin >> temp;
+            str.push_back(temp);
+        }
+    }
+
+    void execute()
+    {
+        vector<string> strCopy = str;
+        for (int i = 0; i < t; i++)
+        {
+            int ans = makeBeautiful(strCopy[i]);
+        }
+    }
+
+    void executeAndPrintOutput()
+    {
+        for (int i = 0; i < t; i++)
+        {
+            int ans = makeBeautiful(str[i]);
+            cout << ans << "\n";
+        }
+    }
+};
+
+int main()
+{
+   
+    Runner runner;
+    runner.takeInput();
+    runner.executeAndPrintOutput();
+
+    return 0;
+}
+
+
