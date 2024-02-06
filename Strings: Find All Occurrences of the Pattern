@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void findPatternOccurrences(const string& str, const string& pat) {
+    // Iterate through the string to find occurrences of the pattern
+    for (size_t i = 0; i <= str.length() - pat.length(); ++i) {
+        // Check if the substring starting at position i matches the pattern
+        if (str.substr(i, pat.length()) == pat) {
+            cout << i << " ";
+        }
+    }
+}
+
+int main() {
+    string str, pat;
+    cin >> str >> pat;
+
+    findPatternOccurrences(str, pat);
+
+    return 0;
+}
